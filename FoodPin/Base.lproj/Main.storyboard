@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="Cam-d8-TZy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="Cam-d8-TZy" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cam-d8-TZy" id="TZl-nW-kq0">
@@ -68,6 +68,12 @@
                                         <constraint firstItem="TLy-Kj-2QY" firstAttribute="leading" secondItem="TZl-nW-kq0" secondAttribute="leading" constant="6" id="u8p-h4-H66"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLabel" destination="OXd-x9-hFc" id="swD-Wd-E5l"/>
+                                    <outlet property="nameLabel" destination="Y9I-eY-hsZ" id="cDn-Vl-GQE"/>
+                                    <outlet property="thumbnailImageView" destination="3NC-IB-lok" id="evF-LS-tUy"/>
+                                    <outlet property="typeLabel" destination="3eX-eO-HLI" id="6jb-Oe-e7t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
