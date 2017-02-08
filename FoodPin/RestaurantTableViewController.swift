@@ -27,13 +27,15 @@ class RestaurantTableViewController: UITableViewController {
 
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
 
+    var restaurantVisited = Array(repeating: false, count: 21)
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath ) {
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .alert)
         // how to add actions to the menü
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -48,6 +50,16 @@ class RestaurantTableViewController: UITableViewController {
         let callAction = UIAlertAction( title: "Call " + "123-000\(indexPath.row)", style: .default,
         handler: callActionHandler)
         optionMenu.addAction(callAction)
+        // add checkin action
+        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+            (action:UIAlertAction!) -> Void in
+            
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+            self.restaurantVisited[indexPath.row]=true
+        })
+        optionMenu.addAction(checkInAction)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -69,9 +81,13 @@ class RestaurantTableViewController: UITableViewController {
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
+        if restaurantVisited[indexPath.row] {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
