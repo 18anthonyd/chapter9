@@ -58,7 +58,17 @@ class RestaurantTableViewController: UITableViewController {
             cell?.accessoryType = .checkmark
             self.restaurantVisited[indexPath.row]=true
         })
-        optionMenu.addAction(checkInAction)
+        let unCheckAction = UIAlertAction(title: "Undo Check in", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+            self.restaurantVisited[indexPath.row] = false
+        })
+        if restaurantVisited[indexPath.row] {
+            optionMenu.addAction(unCheckAction)
+        } else {
+            optionMenu.addAction(checkInAction)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
