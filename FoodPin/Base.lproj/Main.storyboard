@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="j8v-Xa-9Gi">
             <objects>
-                <viewController id="5Mh-o7-Hsw" sceneMemberID="viewController">
+                <viewController id="5Mh-o7-Hsw" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oz9-Ze-N9J"/>
                         <viewControllerLayoutGuide type="bottom" id="2e1-L0-GhN"/>
@@ -21,12 +21,21 @@
                     <view key="view" contentMode="scaleToFill" id="UeB-Bk-jfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBS-J1-8oU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="xBS-J1-8oU" id="mdw-nR-81p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggm-bo-XCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="78"/>
+            <point key="canvasLocation" x="1888.8" y="77.811094452773617"/>
         </scene>
         <!--Restaurant Table View Controller-->
         <scene sceneID="Xvd-ci-E1F">
@@ -63,12 +72,17 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="z4I-D1-vI8">
                                                     <rect key="frame" x="70" y="0.0" width="299" height="60"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-eY-hsZ">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Qo-Y8-ckG">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="25"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-eY-hsZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="47" height="25"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXd-x9-hFc">
                                                             <rect key="frame" x="0.0" y="26" width="55" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
@@ -76,7 +90,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-eO-HLI">
-                                                            <rect key="frame" x="0.0" y="44" width="29.5" height="16"/>
+                                                            <rect key="frame" x="0.0" y="44" width="30" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -98,7 +112,7 @@
                                     <outlet property="nameLabel" destination="Y9I-eY-hsZ" id="cDn-Vl-GQE"/>
                                     <outlet property="thumbnailImageView" destination="3NC-IB-lok" id="evF-LS-tUy"/>
                                     <outlet property="typeLabel" destination="3eX-eO-HLI" id="6jb-Oe-e7t"/>
-                                    <segue destination="5Mh-o7-Hsw" kind="show" id="reu-HL-qq7"/>
+                                    <segue destination="5Mh-o7-Hsw" kind="show" identifier="showRestaurantDetail" id="reu-HL-qq7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
