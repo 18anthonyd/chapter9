@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,17 +26,59 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xBS-J1-8oU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="RZq-st-5pE">
+                                <rect key="frame" x="16" y="296" width="343" height="76.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jGR-mK-AvE">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mug-So-6v3">
+                                                <rect key="frame" x="135.5" y="0.0" width="72.5" height="33.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mug-So-6v3" secondAttribute="height" multiplier="24:11" id="c7B-g7-x62"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" red="0.97990348035806274" green="1" blue="0.99033072571641345" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqe-Fv-e1n">
+                                        <rect key="frame" x="139" y="34.5" width="65.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tk-LP-tn8">
+                                        <rect key="frame" x="153" y="56" width="37.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="0.9565919944275002" green="0.95540230205436627" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jGR-mK-AvE" secondAttribute="trailing" id="7nW-B9-3Dh"/>
+                                    <constraint firstItem="jGR-mK-AvE" firstAttribute="leading" secondItem="RZq-st-5pE" secondAttribute="leading" id="MZc-y7-UxS"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xBS-J1-8oU" firstAttribute="top" secondItem="Oz9-Ze-N9J" secondAttribute="bottom" id="2Cv-9L-c4d"/>
+                            <constraint firstItem="RZq-st-5pE" firstAttribute="centerY" secondItem="UeB-Bk-jfP" secondAttribute="centerY" id="9bs-WN-cVV"/>
                             <constraint firstItem="2e1-L0-GhN" firstAttribute="top" secondItem="xBS-J1-8oU" secondAttribute="bottom" id="Cx5-6S-QLV"/>
+                            <constraint firstItem="RZq-st-5pE" firstAttribute="leading" secondItem="UeB-Bk-jfP" secondAttribute="leadingMargin" id="FDQ-Xr-uF0"/>
+                            <constraint firstItem="RZq-st-5pE" firstAttribute="centerX" secondItem="UeB-Bk-jfP" secondAttribute="centerX" id="SlN-Mk-U1f"/>
                             <constraint firstItem="xBS-J1-8oU" firstAttribute="leading" secondItem="UeB-Bk-jfP" secondAttribute="leading" id="ULx-7u-cAS"/>
+                            <constraint firstItem="RZq-st-5pE" firstAttribute="trailing" secondItem="UeB-Bk-jfP" secondAttribute="trailingMargin" id="YgP-BB-mor"/>
                             <constraint firstAttribute="trailing" secondItem="xBS-J1-8oU" secondAttribute="trailing" id="tA1-TJ-F6P"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="restaurantGenre" destination="4tk-LP-tn8" id="ffn-FJ-gHr"/>
                         <outlet property="restaurantImageView" destination="xBS-J1-8oU" id="mdw-nR-81p"/>
+                        <outlet property="restaurantName" destination="mug-So-6v3" id="WRR-gW-YbX"/>
+                        <outlet property="restaurantType" destination="kqe-Fv-e1n" id="y4z-qc-5Zo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggm-bo-XCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,7 +138,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-eO-HLI">
-                                                            <rect key="frame" x="0.0" y="44" width="30" height="16"/>
+                                                            <rect key="frame" x="0.0" y="44" width="29.5" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
