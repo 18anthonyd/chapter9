@@ -14,10 +14,10 @@ class RestaurantDetailViewController: UIViewController {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
-        restaurantImageView.image = UIImage(named: restaurantImage)
-        restaurantName.text = resName
-        restaurantGenre.text = resGenre
-        restaurantType.text = resType
+        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantName.text = restaurant.name
+        restaurantGenre.text = restaurant.location
+        restaurantType.text = restaurant.type
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,13 +26,10 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     @IBOutlet var restaurantImageView:UIImageView!
-    var restaurantImage = ""
+    var restaurant:Restaurant!
     @IBOutlet var restaurantName:UILabel!
     @IBOutlet var restaurantType:UILabel!
     @IBOutlet var restaurantGenre:UILabel!
-    var resName = ""
-    var resType = ""
-    var resGenre = ""
     /*
     // MARK: - Navigation
 

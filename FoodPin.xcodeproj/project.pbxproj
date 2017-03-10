@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2589B41E70900300114907 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2589B31E70900300114907 /* Restaurant.swift */; };
 		FF84656B1E3A2A8E0061F76D /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF84656A1E3A2A8E0061F76D /* RestaurantTableViewCell.swift */; };
 		FF8949101E38D6B50070E5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89490F1E38D6B50070E5ED /* AppDelegate.swift */; };
 		FF8949151E38D6B50070E5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8949131E38D6B50070E5ED /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF2589B31E70900300114907 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		FF84656A1E3A2A8E0061F76D /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		FF89490C1E38D6B50070E5ED /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF89490F1E38D6B50070E5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				FF8949211E38D8820070E5ED /* RestaurantTableViewController.swift */,
 				FF84656A1E3A2A8E0061F76D /* RestaurantTableViewCell.swift */,
 				FF8D16261E685ED1006FE093 /* RestaurantDetailViewController.swift */,
+				FF2589B31E70900300114907 /* Restaurant.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2589B41E70900300114907 /* Restaurant.swift in Sources */,
 				FF8949221E38D8820070E5ED /* RestaurantTableViewController.swift in Sources */,
 				FF84656B1E3A2A8E0061F76D /* RestaurantTableViewCell.swift in Sources */,
 				FF8D16271E685ED1006FE093 /* RestaurantDetailViewController.swift in Sources */,
